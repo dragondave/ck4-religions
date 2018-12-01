@@ -16,15 +16,12 @@ function csvJSON(csv){
 	  result[currentline[0]] = obj;
   }
   
-  return result; //JavaScript object
-  //return JSON.stringify(result); //JSON
-};
+  return result;
+  };
 
 function create_dropdown(tag_id, variable) {
     var dropdown = document.getElementById(tag_id);
-    console.log(variable)
     for (item in variable) {
-        console.log(item);
         var optn = document.createElement("OPTION");
         optn.text = item;
         optn.value = item;
@@ -41,5 +38,36 @@ Unyielding	Enabled		Enabled					Yes		Armies are stronger when defending on home 
 Warmongering	Enabled		Enabled	Prestige loss when at peace for too long.					Rulers do not receive opinion penalties for raised vassal levies. Rulers are extremely aggressive.	\n\
 Peaceful	Disabled	Piety gain while at peace.	Disabled						Rulers are less likely to start wars, plots and factions.	";
 
+doctrine_csv = "Doctrines		Succession Laws	Superstitions	Rulership	Priesthood	Male Priesthood	Female Priesthood	Resistance to Proselytizing	Marriage Laws	Concubines	Consorts	Councils	Military	Taxes	Attribute Bonus\n\
+Agnatic Clans		Allow Open Succession Law. Agnatic Law is Enforced.				TRUE	FALSE		Matrilineal Marriages are NOT allowed.	Yes	No	Female characters are NOT allowed in the Council			\n\
+Ancestor Veneration		Allow Eldership Succession Law	Allows characters to use the Ancestor Worship decision. The Religious Head can decide upon dead ancestors to give special status.												\n\
+Animistic			Characters can perform a rite of passage upon reaching adulthood										Units from Counties following the true faith recieve a land moral bonus.		\n\
+Astrology			Character are assigned Zodiac traits on birth and by decision. Grants access to the Hermetic Society												\n\
+Bloodthirsty Gods			Prisoners of different religion can be sacrificed for Piety Sacrificing prisoners unlocks special traits and actions												\n\
+Daring													Prepared Invasions are Allowed		\n\
+Divine Marriage			Close-Kin Marriage among nobility is considered a Divine Union Reformer's family becomes Divine.						Close-Kin Marriage is Allowed						\n\
+Enatic Clans		Allow Open Succession Law. Enatic Law is Enforced.		Female rulers are NOT penalized.		FALSE	TRUE			No	Yes	Male characters are NOT allowed in the Council			\n\
+Equality		Absolute Cognatic Law is Enforced.		Female rulers are NOT penalized.		TRUE	TRUE			Yes	Yes				\n\
+Haruspicy			Diviner read the signs before a war to try to improve troop morale												\n\
+Meritocracy		Heir Designation is Allowed.													\n\
+Monasticism		Rulers can ask their subjects to 'Take the Vows' and disinherit them.	Enforced Celibacy for priests.		Priesthood cannot marry. Priesthood cannot inherit.										Monasticism\n\
+Polygamy									Polygamy is Allowed	No					\n\
+Religion Specific															\n\
+Religious Tax														Religious taxation of subjects of a different religious group is allowed.	\n\
+Sea-Bound													Fleet can navigate through major rivers.  Ship Maintenance Reduced to 10%. Looters prefer coastal counties.		\n\
+Stability				Short Reign Penalty is Disabled Rulers can spend Piety fo Improve their Courtiers' Attributes											\n\
+Syncretism				Rulers can choose to gain Sympathy with another faith by decisions.											\n\
+Unrelenting													Armies ignore defensive attrition. Armies have increased offensive capabilities.		\n\
+Totem-Guardians	African	Enables Eldership succession law. Rulers can ask their subjects to 'Take the Vows' and disinherit them.			Priesthood cannot marry. Priesthood cannot inherit.									Religious taxation of subjects of a different religious group is allowed.	\n\
+Invaders	Aztec		Prisoners of different religion can be sacrificed for Piety. Sacrificing prisoners unlocks special traits and actions.										Armies ignore defensive attrition. Armies have increased offensive capabilities. Fleets can navigate through major rivers. Ship Maintenance is reduced to 10%.		\n\
+Harmonious	Bön	Heir Designation is Allowed Absolute Cognatic Law is Enforced		No Penalty for Female Ruler					Disallow Close-Kin Marriage						\n\
+Sons of Ragnarok	Germanic												Prepared Invasions are allowed. Fleet can navigate through major rivers.  Ship Maintenance Reduced to 10%. Looters prefer coastal counties. Allows Viking traits/events		\n\
+Civilized	Hellenic	Heir designation is allowed.		Rulers can choose to gain Sympathy with another faith by decision. Ruler do not receive opinion penalties for raised vassal levies											\n\
+Defenders of Dievas	Romuva	Enables Eldership succession law						Yes							\n\
+Children of Perun	Slavic			Short Reign Penalty is Disabled Rulers can spend Piety fo Improve their Courtiers' Attributes									Fleet can navigate through major rivers.		\n\
+Survivor of Ukko	Suomenusko			Short Reign Penalty is Disabled Rulers can spend Piety fo Improve their Courtiers' Attributes				Yes							\n\
+Eternal Riders	Tengri								Polygamy is Allowed	No			Ignore Defensive Attrition Army Offensive Bonus		\n\
+Dawnbreakers	Zunist		Close-Kin Marriage amongst nobility is considered a Divine Union Reformer's family becomes Divine.						Polygamy is Allowed Close-Kin Marriage is Allowed	No					";
+
 natures = csvJSON(natures_csv);
-console.log(natures);
+doctrine = csvJSON(doctrine_csv);

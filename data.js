@@ -99,9 +99,17 @@ Autonomous	Can never have a religious head.	Followers can pick a Branch	Disabled
 Hierocratic	A priest is put in charge of this religion.			\n\
 Temporal	Reformer becomes religious head. Religious head is a secular title.			";
 
-
 natures = csvJSON(natures_csv);
 doctrine = csvJSON(doctrine_csv);
 unreformed_religion = csvJSON(unreformed_religion_csv);
 reformed_religion = csvJSON(reformed_religion_csv);
 leadership = csvJSON(leadership_csv);
+
+function calculate() {
+    my_values = {"nature": natures[document.getElementById('natures').value],
+                 "doctrine1": doctrine[document.getElementById('doctrine1').value],
+                 "doctrine2": doctrine[document.getElementById('doctrine2').value],
+                 "religion": unreformed_religion[document.getElementById('religion').value],
+                 "leadership": leadership[document.getElementById('leadership').value]};
+    console.log(my_values);
+}
